@@ -52,7 +52,7 @@ Note that the R chunks are labeled with `plot-star` and `cor-star` to provide sp
 To finish, clean up the narrative by removing these instructions.
 
 ```{r plot-star}
-
+print("hello world!")
 ```
 
 I'm some filler text, you should replace me with more meaningful text...
