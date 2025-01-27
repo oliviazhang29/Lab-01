@@ -86,15 +86,30 @@ and the correlation coefficient comfirmed that x and y are barely correlated (r 
 
 ### Exercise 4
 
-Add your code and narrative to complete this exercise. Use the conventions from the previous exercises to name your chunks and organize your work.
+Here are the steps to take a look at the circle dateset:
 
-```{r}
+First, the data in the circle dataset is plotted:
 
+```{r plot-circle}
+#filter out the circle dataset from datasaurus_dozen and name it as circle_data
+circle_data <- datasaurus_dozen %>%
+  filter(dataset == "circle")
+
+#plot the data, with x on x axis, y on y axis, and each observation represented as points
+ggplot(data = circle_data, mapping = aes(x = x, y = y)) +
+  geom_point()
 ```
 
-```{r}
+Wow, the plot of the circle dataset looks like a circle!
 
+Next, the correlation between `x` and `y` in this dataset is calculated:
+
+```{r cor-circle}
+star_data %>%
+  summarize(r = cor(x, y))
 ```
+Again, from the plot, we can tell that x and y in the circle dataset does not have a linear relationship,
+and the correlation coefficient comfirmed that x and y are barely correlated (r = -.063). 
 
 ### Exercise 5
 
