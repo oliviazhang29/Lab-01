@@ -4,8 +4,8 @@ author: "Olivia Zhang"
 date: "1/22/2025"
 output: 
   html_document: 
-    fig_height: 4
-    fig_width: 9
+    highlight: pygments
+    theme: cerulean
 ---
 
 ## Load packages and data
@@ -90,7 +90,7 @@ Here are the steps to take a look at the circle dateset:
 
 First, the data in the circle dataset is plotted:
 
-```{r plot-circle}
+```{r plot-circle, fig.height=6, fig.width=6}
 #filter out the circle dataset from datasaurus_dozen and name it as circle_data
 circle_data <- datasaurus_dozen %>%
   filter(dataset == "circle")
