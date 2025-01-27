@@ -29,28 +29,30 @@ datasaurus_dozen %>%
 
 ### Exercise 2
 
-The answers for this exercise are already provided to help guide you. Clean up the narrative to reflect what you want to submit. Let’s break it into steps:
-
-
-
-First, let's plot the data in the dino dataset:
+First, the data in the dino dataset is plotted:
 
 ```{r plot-dino, fig.height=3, fig.width=6}
+#filter out the dino dataset from datasaurus_dozen and name it as dino_data
 dino_data <- datasaurus_dozen %>%
   filter(dataset == "dino")
 
+#plot the data, with x on x axis, y on y axis, and each observation represented as points
 ggplot(data = dino_data, mapping = aes(x = x, y = y)) +
   geom_point()
 ```
 
-Next, let's calculate the correlation between `x` and `y` in this dataset:
+As you can see, the plot of the dino dataset looks like a dinasour! What a surprise!
+
+Next, the correlation between `x` and `y` in this dataset is calculated:
 
 ```{r cor-dino}
 dino_data %>%
   summarize(r = cor(x, y))
 ```
-Once you’ve cleaned up the text, add your own explanation or observations here!
 
+Although we can eye from the plot that x and y in the dino dataset does not have a linear relationship,
+the correlation coefficient further comfirmed our observation: r = -.0645, which means x and y are 
+barely correlated. 
 
 ### Exercise 3
 
