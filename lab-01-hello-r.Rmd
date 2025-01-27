@@ -128,6 +128,6 @@ are the correlation coefficients all close to zero?
 datasaurus_dozen %>%
   group_by(dataset) %>%
   summarize(r = cor(x, y)) %>%
-  print(13)
+  print()
 ```
 Wow, indeed! Amazing!
