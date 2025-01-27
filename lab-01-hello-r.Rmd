@@ -29,6 +29,8 @@ datasaurus_dozen %>%
 
 ### Exercise 2
 
+Here are the steps to look at the dino dataset.
+
 First, the data in the dino dataset is plotted:
 
 ```{r plot-dino, fig.height=3, fig.width=6}
@@ -56,21 +58,30 @@ barely correlated.
 
 ### Exercise 3
 
-This is your turn to write the code and narrative for the star dataset. Follow the same steps as above to complete the analysis. Don't forget to label your chunks appropriately!
+Here are the steps to take a look at the star dateset:
 
-Note that the R chunks are labeled with `plot-star` and `cor-star` to provide spaces to place the code for plotting and calculating the correlation coefficient.
-To finish, clean up the narrative by removing these instructions.
+First, the data in the star dataset is plotted:
 
 ```{r plot-star}
-print("hello world!")
+#filter out the star dataset from datasaurus_dozen and name it as star_data
+star_data <- datasaurus_dozen %>%
+  filter(dataset == "star")
+
+#plot the data, with x on x axis, y on y axis, and each observation represented as points
+ggplot(data = star_data, mapping = aes(x = x, y = y)) +
+  geom_point()
 ```
 
-I'm some filler text, you should replace me with more meaningful text...
+Wow, the plot of the star dataset looks like a star!
+
+Next, the correlation between `x` and `y` in this dataset is calculated:
 
 ```{r cor-star}
-
+star_data %>%
+  summarize(r = cor(x, y))
 ```
-Add your explanation here—what did you notice?
+Again, from the plot, we can tell that x and y in the star dataset does not have a linear relationship,
+and the correlation coefficient comfirmed that x and y are barely correlated (r = -.063). 
 
 
 ### Exercise 4
